@@ -1,0 +1,53 @@
+/* weekselect.css - 요일별 선택 UI 스타일링 예시 */
+
+.weekselect-container {
+  padding: 24px;
+  max-width: 420px;
+  margin: 0 auto;
+  background: #f9f9fb;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(20,40,170,0.06);
+}
+
+.weekselect-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.weekselect-btn {
+  padding: 8px 18px;
+  background: #eceef2;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.weekselect-btn:hover {
+  background: #d2d7ef;
+}
+.weekselect-btn.selected {
+  background: #f63c23;
+  color: #fff;
+  font-weight: bold;
+}
+
+.weekselect-content {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding: 28px 12px;
+  min-height: 80px;
+  font-size: 1.08rem;
+  text-align: center;
+  color: #353a45;
+}
+
+.weekselect-title {
+    margin-bottom: 32px; /* 원하는 만큼 조절 */
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
