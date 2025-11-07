@@ -46,8 +46,8 @@
 }
 
 .weekselect-title {
-    margin-bottom: 32px; /* 원하는 만큼 조절 */
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-  }
+  margin-bottom: 32px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
