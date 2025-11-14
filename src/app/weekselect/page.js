@@ -23,6 +23,28 @@ export default function WeekSelect() {
 
   return (
     <div className="weekselect-container">
+
+      <header className="header">
+        <img src="/wn.svg" alt="웹툰노트 로고" className="logo"/>   
+      
+      
+      <div className="search-bar">
+        <input
+        type="text"
+        className="search-input"
+        placeholder="리뷰할 웹툰을 검색해보세요"
+        />
+
+        <button className="search-btn">
+          <img src="searchicon.svg" alt="검색 아이콘" className="search-icon"/>
+        </button>
+      </div>
+      
+        
+
+      </header>
+
+    
       <h1 className="weekselect-title">요일 순 웹툰</h1>
 
       <div className="weekselect-buttons">
@@ -41,5 +63,6 @@ export default function WeekSelect() {
         {dayContents[selectedDay]}
       </div>
     </div>
-  );
+  )
 }
+
