@@ -13,7 +13,7 @@ export default function StarDotPage() {
         justifyContent: "center",
       }}
     >
-      <ReviewWidget title="노아인가" />
+      <ReviewWidget title="노아인" />
     </main>
   );
 }

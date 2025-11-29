@@ -5,8 +5,8 @@ import "./ReviewWidget.css";
 
 export default function ReviewWidget({ title = "노아인가" }) {
   const [rating, setRating] = useState(0); // 별점
-  const [hover, setHover] = useState(0);   // 마우스 올린 별점
-  const [text, setText] = useState("");    // 리뷰 내용
+  const [hover, setHover] = useState(0); // 마우스 올린 별점
+  const [text, setText] = useState(""); // 리뷰 내용
 
   // 예시용 댓글 데이터
   const sampleComment = {
@@ -71,11 +71,7 @@ export default function ReviewWidget({ title = "노아인가" }) {
             value={text}
             onChange={(e) => setText(e.target.value)} // ← 테스트 코드랑 똑같은 패턴
           />
-          <button
-            className="rw-submit"
-            type="button"
-            onClick={handleSubmit}
-          >
+          <button className="rw-submit" type="button" onClick={handleSubmit}>
             제출
           </button>
         </div>
