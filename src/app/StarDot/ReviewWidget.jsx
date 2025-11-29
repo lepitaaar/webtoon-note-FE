@@ -4,15 +4,16 @@ import { useState } from "react";
 import "./ReviewWidget.css";
 
 export default function ReviewWidget({ title = "노아인가" }) {
-  const [rating, setRating] = useState(0); // 별점
-  const [hover, setHover] = useState(0); // 마우스 올린 별점
-  const [text, setText] = useState(""); // 리뷰 내용
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+  const [text, setText] = useState("");
+  const [name, setName] = useState("");
+  const [likes, setLikes] = useState(20);
+  const [isLiked, setIsLiked] = useState(false);
 
-  // 예시용 댓글 데이터
   const sampleComment = {
     name: "익명3",
     score: 4.5,
-    likes: 20,
     content: "이거보고 눈물흘렸다 ㅠㅠㅠ",
   };
 
@@ -22,25 +23,50 @@ export default function ReviewWidget({ title = "노아인가" }) {
       return;
     }
 
-    console.log("제출된 리뷰:", { rating, text });
+    console.log("제출된 리뷰:", {
+      name: name || "익명",
+      rating,
+      text,
+    });
+
     alert("리뷰가 제출되었습니다. (데모)");
 
-    // 제출 후 초기화
     setRating(0);
     setText("");
   };
 
+  const handleLike = () => {
+    if (isLiked) {
+      setLikes((prev) => prev - 1);
+      setIsLiked(false);
+      alert("좋아요를 취소했습니다.");
+    } else {
+      setLikes((prev) => prev + 1);
+      setIsLiked(true);
+      alert("좋아요를 눌렀습니다!");
+    }
+  };
+
+  const nameMaxLength = 10;
+  const nameSize = Math.max(2, (name || "이름").length);
+
   return (
     <section className="rw-root">
-      {/* 제목 */}
       <h2 className="rw-title">{title}</h2>
 
-      {/* 위쪽 리뷰 작성 카드 */}
       <article className="rw-review-card">
         {/* 이름 칩 */}
-        <div className="rw-name-chip">이름</div>
+        <input
+          className="rw-name-chip"
+          type="text"
+          placeholder="이름"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          maxLength={nameMaxLength}
+          size={nameSize}
+        />
 
-        {/* 별점 줄 */}
+        {/* 별점 */}
         <div className="rw-stars-row">
           <div className="rw-stars">
             {Array.from({ length: 5 }).map((_, i) => {
@@ -63,13 +89,13 @@ export default function ReviewWidget({ title = "노아인가" }) {
           <span className="rw-rating-number">{rating || 1}</span>
         </div>
 
-        {/* 텍스트 입력 + 제출 버튼 */}
+        {/* 리뷰 입력 */}
         <div className="rw-textbox">
           <textarea
             className="rw-textarea"
             placeholder="리뷰를 작성해 주세요"
             value={text}
-            onChange={(e) => setText(e.target.value)} // ← 테스트 코드랑 똑같은 패턴
+            onChange={(e) => setText(e.target.value)}
           />
           <button className="rw-submit" type="button" onClick={handleSubmit}>
             제출
@@ -77,7 +103,7 @@ export default function ReviewWidget({ title = "노아인가" }) {
         </div>
       </article>
 
-      {/* 아래 댓글 카드 */}
+      {/* 댓글 UI */}
       <article className="rw-comment-card">
         <header className="rw-comment-header">
           <div className="rw-comment-left">
@@ -91,9 +117,10 @@ export default function ReviewWidget({ title = "노아인가" }) {
             </div>
           </div>
 
-          <button className="rw-like-btn" type="button">
+          {/* 좋아요 버튼 */}
+          <button className="rw-like-btn" type="button" onClick={handleLike}>
             <span className="rw-like-icon">👍</span>
-            <span>{sampleComment.likes}</span>
+            <span className="rw-like-count">{likes}</span>
           </button>
         </header>
 

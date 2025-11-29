@@ -1,6 +1,5 @@
-/* 전체 래퍼 (가로로 조금 더 긴 형태) */
 .rw-root {
-  max-width: 700px; /* 기존 420px → 가로 길이 늘림 */
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
   padding: 16px;
@@ -8,14 +7,12 @@
     sans-serif;
 }
 
-/* 상단 제목 (노아인가) */
 .rw-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-/* ===== 상단 리뷰 작성 카드 ===== */
 .rw-review-card {
   border-radius: 12px;
   border: 1px solid #e5e5e5;
@@ -25,20 +22,19 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
-/* "이름" 칩 */
+/* 이름 입력칩 (작게 시작 → 입력 글자수만큼 늘어남) */
 .rw-name-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
   border: 1px solid #dcdcdc;
-  font-size: 11px;
+  font-size: 12px;
   color: #555;
+  background-color: #ffffff;
+  outline: none;
   margin-bottom: 8px;
 }
 
-/* 별점 줄 */
+/* 별점 */
 .rw-stars-row {
   display: flex;
   align-items: center;
@@ -52,16 +48,15 @@
 
 .rw-star {
   border: none;
-  outline: none;
   background: none;
   cursor: pointer;
   font-size: 20px;
   padding: 0 1px;
-  color: #e0e0e0; /* 빈 별 */
+  color: #e0e0e0;
 }
 
 .rw-star-filled {
-  color: #ffb400; /* 채워진 별 */
+  color: #ffb400;
 }
 
 .rw-rating-number {
@@ -69,16 +64,15 @@
   color: #333;
 }
 
-/* 텍스트 박스 (회색 내박스) */
+/* 리뷰 입력 박스 */
 .rw-textbox {
   position: relative;
   border-radius: 10px;
   border: 1px solid #e3e3e3;
   background-color: #fafafa;
-  padding: 8px 8px 30px; /* 아래쪽 버튼 공간 확보 */
+  padding: 8px 8px 30px;
 }
 
-/* 텍스트 입력 영역 */
 .rw-textarea {
   width: 100%;
   min-height: 80px;
@@ -86,14 +80,14 @@
   outline: none;
   resize: none;
   background: transparent;
-  font-size: 14px; /* 글씨 보이게 명확히 지정 */
+  font-size: 14px;
   line-height: 1.4;
-  color: #111; /* 글자 색 명확히 지정 */
-  white-space: pre-wrap; /* 긴 글 자동 줄바꿈 */
-  word-break: break-word; /* 너무 긴 단어도 줄바꿈 */
+  color: #111;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-/* 제출 버튼 (가독성 높여서 확실히 보이게 수정됨) */
+/* 제출 버튼 */
 .rw-submit {
   position: absolute;
   right: 8px;
@@ -106,10 +100,9 @@
   background-color: #ffffff;
   cursor: pointer;
   color: #444;
-  user-select: none;
 }
 
-/* ===== 아래 댓글 카드 ===== */
+/* 댓글 카드 */
 .rw-comment-card {
   border-radius: 12px;
   border: 1px solid #e5e5e5;
@@ -124,7 +117,6 @@
   margin-bottom: 6px;
 }
 
-/* 왼쪽 프로필 + 이름 + 별점 */
 .rw-comment-left {
   display: flex;
   align-items: center;
@@ -162,7 +154,7 @@
   margin-right: 2px;
 }
 
-/* 좋아요 칩 */
+/* 좋아요 버튼 */
 .rw-like-btn {
   display: inline-flex;
   align-items: center;
@@ -179,7 +171,10 @@
   font-size: 13px;
 }
 
-/* 댓글 내용 */
+.rw-like-count {
+  color: #555;
+}
+
 .rw-comment-content {
   font-size: 13px;
   color: #333;
