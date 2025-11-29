@@ -47,11 +47,19 @@ export default function WeekSelect() {
   }
 };
 
+const resetSearch = () => {
+  setQuery("");
+  setResult([]);
+  setError("");
+  setLoading(false);
+  setSelectedDay("월"); 
+};
+
 
   return (
     <div className="weekselect-container">
       <header className="header">
-        <img src="/wn.svg" alt="웹툰노트 로고" className="logo" />
+        <img src="/wn.svg" alt="웹툰노트 로고" className="logo" onClick={resetSearch}/>
         <div className="search-bar">
           <input
             type="text"
