@@ -80,7 +80,8 @@ export default function ReviewWidget({ title = "노아인가" }) {
                   onClick={() => setRating(value)}
                   onMouseEnter={() => setHover(value)}
                   onMouseLeave={() => setHover(0)}
-                >
+                > 
+                
                   ★
                 </button>
               );
