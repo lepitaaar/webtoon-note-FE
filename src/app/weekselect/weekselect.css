@@ -1,4 +1,4 @@
-/* weekselect.css - 요일별 선택 UI 스타일링 예시 */
+/* weekselect.css */
 
 .weekselect-container {
   padding: 24px;
@@ -13,17 +13,19 @@
   display: flex;
   gap: 8px;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .weekselect-btn {
-  padding: 8px 18px;
+  padding: 8px 12px;
   background: #eceef2;
   color: #222;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  flex: 1;
 }
 .weekselect-btn:hover {
   background: #d2d7ef;
@@ -38,81 +40,71 @@
   background: #fff;
   border: 1px solid #eaeaea;
   border-radius: 6px;
-  padding: 28px 12px;
+  padding: 20px 12px;
   min-height: 80px;
-  font-size: 1.08rem;
-  text-align: center;
   color: #353a45;
 }
 
+/* ✅ 제목 스타일 수정: 왼쪽 정렬 (text-align: left) */
 .weekselect-title {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: 700;
-  text-align: center;
-  padding:10px;
+  text-align: left; /* 왼쪽 정렬 */
+  padding-left: 4px; /* 살짝 여백 */
+  color: #1a1a1a;
 }
 
 .header {
-  display:flex;
-  justify-content:flex-start;
-  padding: 20px 0px;
-  gap:80px;
-  align-items:center;
-  position: relative;
-  
-  width:100%;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
 }
 
 .logo {
-  width : 40px;
-  height:auto;
+  width: 40px;
+  height: auto;
+  flex-shrink: 0;
 }
 
-
-/* 검색창 */
 .search-bar {
-  position: flex;  /* 화면 오른쪽 상단 고정 */
-  top: 20px;
-  right: 30px;
   display: flex;
   align-items: center;
   background: #fff;
   border: 1.5px solid #ccc;
-  border-radius: 30px; /* 둥글게 */
-  padding: 8px 14px;
- 
-  z-index: 1000;
+  border-radius: 30px;
+  padding: 6px 14px;
+  width: 100%;
+  max-width: 260px;
+  margin-left: 12px;
 }
 
-/* 입력창 */
 .search-input {
   border: none;
   outline: none;
-  font-size:12px;
-  width: 220px; /* 길이 조절 가능 */
+  font-size: 13px;
+  width: 100%;
   color: #333;
+  background: transparent;
 }
 
 .search-input::placeholder {
   color: #999;
 }
 
-/* 돋보기 버튼 */
 .search-btn {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-
- 
+  display: flex;
+  align-items: center;
 }
 
-
-/* 아이콘 크기 */
 .search-icon {
   width: 18px;
   height: 18px;
-  opacity:0.6;
+  opacity: 0.6;
 }
