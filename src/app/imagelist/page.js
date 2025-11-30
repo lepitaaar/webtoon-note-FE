@@ -1,24 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import "./imagelist.css";
 
 export default function ImageList() {
   const cards = Array.from({ length: 9 });
-
-  function handleCardClick(index) {
-    console.log(`🟥 Card ${index + 1} clicked!`);
-    alert(`Card ${index + 1} 클릭됨! (임시 기능)`);
-  }
 
   return (
     <div className="image-list">
       {/* 3×3 그리드 */}
       <section className="image-grid">
         {cards.map((_, i) => (
-          <div
+          <Link
             key={i}
+            href={`/webtoon_data?id=${i + 1}`}
             className="image-card"
-            onClick={() => handleCardClick(i)}
           />
         ))}
       </section>
