@@ -107,7 +107,9 @@ export default function WeekSelect() {
         </div>
       </header>
 
-      <h1 className="weekselect-title">요일 순 웹툰</h1>
+      <h1 className="weekselect-title">
+        {result.length > 0 ? "검색 결과" : "요일 순 웹툰"}
+        </h1>
 
       <div className="weekselect-buttons">
         {days.map(day => (
